@@ -1,0 +1,41 @@
+<header id="head" class="secondary"></header>
+
+<div class="container">
+             
+	<div class="row">
+        <div class="col-md-12 col-lg-12">
+       <header class="page-header">
+					<h1 class="page-title">Dealers</h1>
+				</header>	
+            <div class="row">
+	            {{#if vendedores}}
+		            {{#each vendedores}}
+                        <div class="col-md-4 col-lg-4">
+                           	<div class="well widget">
+                                {{#if logo}}
+                                    <img src="{{cloudinaryUrl logo}}" class="img-responsive">
+                                {{/if}}
+            					<h4>Email </h4>
+                                {{#if name}}
+                                <h3>{{name}}</h3>
+                                {{/if}}
+                                 {{#if email}}
+			            		<address>{{email}}</address>
+                                {{/if}}
+                                {{#if telefono}}
+						        <h4>Teléfono</h4>
+					            <address>{{telefono}}</address>
+                                {{/if}}
+                                {{#if direccion}}
+                                <h4>Dirección</h4>
+                                <address>{{direccion}}</address>
+                                {{/if}}
+				            </div>
+                        </div>
+				    {{/each}}
+                {{/if}}
+            </div>
+        </div>
+       
+    </div>
+</div> 

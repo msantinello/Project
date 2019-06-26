@@ -1,0 +1,25 @@
+<header id="head" class="secondary"></header>
+
+<div class="container">
+             
+	<div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="row">
+	            {{#if categorias}}
+		            {{#each categorias}}
+                        <div class="col-md-4 col-lg-4">
+                            <h2 class="thin well">{{name}}</h2>
+                            {{#if heroImage}}
+                                <img src="{{cloudinaryUrl heroImage}}" class="img-responsive">
+                            {{/if}}
+                            <h3 >{{subname}}</h3>
+                            <p>{{{description}}}</p>
+                            <a class="btn btn-primary btn-large btn-width" href="{{categoriaUrl slug}}" >Ver Productos</a>
+						    
+                        </div>
+				    {{/each}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,40 @@
+
+<header id="head" class="secondary"></header>
+<div class="container">
+        <div class="row thin">
+                <div class="filter" >
+                {{#if data.vtipo}}
+                    <a class="btn btn-filter" href="/products">All</a>
+                    {{else}}
+                    <a class="btn btn-filter btn-enable" href="/products">All</a>
+                  {{/if}}  
+                       
+            {{#if data.tipo}}
+                {{#each data.tipo}}
+                    {{#ifeq ../data.vtipo.key key}}
+                    <a class="btn btn-filter btn-enable" href="{{tipoUrl key}}">{{name}}</a>
+                    {{else}}
+                    <a class="btn btn-filter" href="{{tipoUrl key}}">{{name}}</a>
+                    {{/ifeq}}
+                    
+                {{/each}}
+            {{/if}}
+        
+        </div>            
+            <div class="row">
+                <div class="col-md-12 col-lg-12"></div>
+	                {{#if data.prod}}
+		                {{#each data.prod}}
+                            <div class="col-md-4 col-lg-4">
+                                <h2><a href="{{productUrl slug}}" >{{name}}</a></h2>
+                                {{#if heroImage}}
+                                    <img src="{{cloudinaryUrl heroImage width='160' height='160'}}" class="img-rounded">
+                                {{/if}}
+                            </div>
+                        {{/each}}
+                    {{/if}}
+            </div>
+     
+</div>
+		
+

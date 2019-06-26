@@ -1,0 +1,60 @@
+<header id="head" class="secondary"></header>
+
+<div class="container">
+	<div class="row">
+		<article class="col-sm-9 maincontent">
+			<header class="page-header">
+				<h1 class="page-title">Contacto</h1>
+			</header>
+			{{#if enquirySubmitted}}
+			<h3>Gracias por contactarnos</h3>
+			{{else}}
+			<form method="post">
+				<input type="hidden" name="action" value="contact">
+				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
+				
+					<label>Nombre</label>
+					<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
+				</div>
+				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
+					<label>Email</label>
+					<input type="email" name="email" class="form-control" value="{{formData.email}}">
+				</div>
+				<div class="form-group">
+					<label>Teléfono</label>
+					<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
+				</div>
+			<!--	<div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
+					<label>Motivo de contacto:</label>
+					<select name="enquiryType" class="form-control">
+						<option value="">(Elegir)</option>
+						{{#each enquiryTypes}}
+						<option value="{{value}}">{{label}}</option>
+						{{/each}}
+					</select>
+				</div> -->
+				<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
+					<label>Mensaje</label>
+					<textarea name="message" placeholder="Dejá tu mensaje..." rows="4" class="form-control">{{formData.message}}</textarea>
+				</div>
+				<div class="form-actions">
+					<button type="submit" class="btn btn-primary">Enviar</button>
+				</div>
+			</form>
+			{{/if}}
+		</article>
+		<aside class="col-sm-3 sidebar sidebar-right">
+				<div class="widget">
+					<h4>Email </h4>
+					<address>
+						info@illusionaudio.com.ar
+					</address>
+						<h4>Teléfono / Whatsapp </h4>
+					<address>
+						+54 341-77787878
+					</address>
+				</div>
+
+			</aside>
+	</div>
+</div>

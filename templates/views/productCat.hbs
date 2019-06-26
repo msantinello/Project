@@ -1,0 +1,43 @@
+<header id="head" class="secondary"></header>
+<div class="container">
+	<div class="row thin">
+        <div class="col-md-12 col-lg-12">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <h2>{{data.vlinea.name}}</h2>
+			    </div>
+                <div class="col-md-12 col-lg-12">
+                    <a href="{{fileUrl data.vlinea.pdfCatalog.filename}}" download="Catalogo.pdf">Descargar Catálogo</a>
+			    </div>
+            </div>    
+            <div class="row">
+                {{#if data.tipoprod}}                
+                    {{#each data.tipoprod}}
+                         <h2 class="thin well">{{name}}</h2>
+                         {{#if ../data.prodfilter}}
+                         <div class="row thin">
+                             {{#each ../data.prodfilter}}
+                                {{#ifeq tipos ../id}}
+                                 <div class="col-md-4 col-lg-4">
+                                    <h2><a href="{{productUrl slug}}" >{{name}}</a></h2>
+                                    {{#if heroImage}}
+                                    <img src="{{cloudinaryUrl heroImage width='160' height='160'}}" class="img-rounded">
+                                    {{/if}}
+                                 </div>
+                                {{/ifeq}}
+                             {{/each}}
+                             
+                         </div>    
+                        {{/if}}
+                        
+                    {{/each}}   
+                {{/if}}     
+
+            </div>
+        </div>
+    </div>
+</div>
+		
+
+
+
