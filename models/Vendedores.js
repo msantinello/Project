@@ -13,7 +13,7 @@ var Vendedor = new keystone.List('Vendedor', {
 Vendedor.add({
 	name: { type: String, required: true },
 	email: { type: Types.Email },
-	telefono: { type: String },
+	contacto: { type: Types.Html, wysiwyg:true, height: 300},
     direccion:{type:String},
     logo:{type: Types.CloudinaryImage},
 });
