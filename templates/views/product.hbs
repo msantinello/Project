@@ -14,9 +14,6 @@
 				<div class="col-md-6 col-lg-6">
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
-							{{#if data.product.heroImage}}
-								<li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-							{{/if}}	
 							{{#if data.product.images}}
 								{{#each data.product.images}}
 						 			<li data-target="#myCarousel"></li>
@@ -51,7 +48,7 @@
 					<div class="row">
 						{{#if data.product.images}}
 							{{#each data.product.images}}
-								<a id="myBtn" href="javascript:void(0)" onclick="$('#myCarousel').carousel({{@index}})"><img src="{{cloudinaryUrl width='150' height='150'}}" alt="imagen"></a>
+								<a id="myBtn" href="javascript:void(0)" onclick="$('#myCarousel').carousel({{@index}})"><img src="{{cloudinaryUrl width='120' height='120' }}" alt="imagen"></a>
 							{{/each}}	  
 						{{/if}}	
 					</div>
