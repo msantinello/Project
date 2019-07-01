@@ -197,7 +197,7 @@ module.exports = function () {
 	};
 	//url link to a specific product
 	_helpers.productUrl = function (productSlug, options) {
-		return ('/products/product/' + productSlug);
+		return ('/products/' + productSlug);
 	};
 
 
