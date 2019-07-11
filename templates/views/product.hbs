@@ -61,18 +61,16 @@
 					</div>
 					<div class="col-md-2 col-lg-2">
 						<h4> Descargas</h4>
-						{{#ifeq data.product.pdfManual.filename null}}
-							{{else}}
-								<a href="{{fileUrl data.product.pdfManual.filename}}" download="Manual.pdf">Manual</a>
-						{{/ifeq}}
 						{{#ifeq data.product.pdfInstall.filename null}}
 							{{else}}
-								<a href="{{fileUrl data.product.pdfInstall.filename}}" download="Instalacion.pdf">Instalación</a>
+								<a href="{{fileUrl data.product.pdfInstall.filename}}" download="Especificaciones_{{data.product.name}}.pdf" ><i class="fa fa-download" aria-hidden="true"></i> Especificaciones</a>
 						{{/ifeq}}
-						{{#ifeq data.product.pdfCatalog.filename null}}
+						<div>
+						{{#ifeq data.product.tipos null}}
 							{{else}}
-								<a href="{{fileUrl data.product.pdfCatalog.filename}}" download="Catalogo.pdf">Catálogo</a>
+								<a href="{{fileUrl data.product.tipos.pdfManual.filename}}" download="{{data.product.tipos.name}}_Manual.pdf"><i class="fa fa-download" aria-hidden="true"></i> Manual</a>
 						{{/ifeq}}
+						</div>
 					</div>
 				</div>
 			</aside>	 

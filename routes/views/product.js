@@ -15,10 +15,9 @@ exports = module.exports = function(req,res){
     }
 
     view.on('init', function(next){
-        var q = keystone.list('Product').model.findOne({
+        (keystone.list('Product').model.findOne({
             slug: locals.filters.product
-            }); 
-        q.exec( function(err, result){
+            })).populate('tipos').exec( function(err, result){
             locals.data.product = result;
             next(err);
     }) ;

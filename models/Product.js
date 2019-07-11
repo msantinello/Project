@@ -25,7 +25,6 @@ Product.add({
     publilshedDate: { type:Date, default:Date.now},
     tipos: { type: Types.Relationship, ref: 'ProductType'},
     linea: { type: Types.Relationship, ref: 'Categoria'},
-    pdfManual:{ type:Types.File, storage: storage },
     pdfInstall:{ type:Types.File, storage: storage },
     
   

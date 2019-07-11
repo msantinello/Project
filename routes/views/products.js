@@ -19,32 +19,6 @@ exports = module.exports = function(req,res){
         tipo: [],
         vtipo:[],
     };
-
-/*     //Load Products
-    view.on('init',function(next){
-        (keystone.list('Product').model.find().sort('sortOrder')).populate('tipos').exec(function(error,result){
-            //console.log("error", error);
-            //console.log("result", result);
-            if (error) return next(error);
-            locals.data.prod = result;
-            });
-        (keystone.list('ProductType').model.find().sort('sortOrder')).exec(function(error,result){
-                if (error) return next(error);
-                locals.data.tipo = result;    
-    
-             });
-          
-        next();
-    });     */
-/*     view.on('init',function(next){
-        (keystone.list('ProductType').model.find().sort('sortOrder')).exec(function(error,result){
-            if (error) return next(error);
-            locals.data.tipo = result;    
-
-         });
-         next();
-       }); */
-    
      
     view.on('init', function (next) {
         //Cargas los tipos de producto
