@@ -10,14 +10,14 @@
 				</header>	
 				<div class="col-md-6 col-lg-6">
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
+							<ol class="carousel-indicators">
 							{{#if data.product.images}}
 								{{#each data.product.images}}
 						 			<li data-target="#myCarousel"></li>
     							{{/each}}	
 							{{/if}}	
-  						</ol> 
-						<div class="carousel-inner" role="listbox">
+  							</ol> 
+							<div class="carousel-inner" role="listbox">
 							 	{{#if data.product.images}}
 									{{#each data.product.images}}
 										{{#ifeq @index 0}}
@@ -31,7 +31,7 @@
 										{{/ifeq}}
 									{{/each}}	  
 								{{/if}}	
-						</div>
+							</div>
 					 		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
     							<span class="glyphicon glyphicon-chevron-left"></span>
     							<span class="sr-only">Previous</span>
@@ -40,18 +40,21 @@
     							<span class="glyphicon glyphicon-chevron-right"></span>
     							<span class="sr-only">Next</span>
   							</a>
-					  
-					</div>
-					<div class="row">
-						{{#if data.product.images}}
-							{{#each data.product.images}}
-								<a id="myBtn" href="javascript:void(0)" onclick="$('#myCarousel').carousel({{@index}})"><img src="{{cloudinaryUrl width='120' height='120' }}" alt="imagen"></a>
-							{{/each}}	  
-						{{/if}}	
-					</div>
-				
+						</div>	  
+					  	<div class="row">
+							<div class="col">
+								{{#if data.product.images}}
+									{{#each data.product.images}}
+										<a id="myBtn" href="javascript:void(0)" onclick="$('#myCarousel').carousel({{@index}})"><img src="{{cloudinaryUrl width='80' height='80'}}" alt="imagen" ></a>
+									{{/each}}	  
+								{{/if}}	
+							</div>
+						</div>
 				</div>	
+			
 			</article>
+			
+	
 			<aside>
 				<div class="col-md-6 col-lg-6"></div>
 					<div class="col-md-4 col-lg-4">
