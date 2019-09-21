@@ -21,7 +21,7 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
-
+var sitemap = require('keystone-express-sitemap');
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
@@ -31,6 +31,8 @@ var routes = {
 	views: importRoutes('./views'),
 	
 };
+
+
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
@@ -47,6 +49,9 @@ exports = module.exports = function (app) {
 	app.get('/products/:tipo', routes.views.products);
 	app.get('/vendedores', routes.views.vendedores);
 	app.all('/contact', routes.views.contact);
+	app.get('/sitemap.xml', function(req, res) {
+		sitemap.create(keystone, req, res);
+	});
 	
 
 
